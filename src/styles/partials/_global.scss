@@ -12,11 +12,12 @@ img {
 .container {
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 1rem 1rem 1rem;
 	@include tablet {
 		width: 90%;
+		padding: 1rem 0rem ;
 	}
-	@include desktop{
+	@include desktop {
 		width: 80%;
 	}
 }
