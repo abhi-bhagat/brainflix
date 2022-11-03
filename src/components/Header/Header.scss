@@ -1,0 +1,62 @@
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/colors.scss" as *;
+@use "../../styles/partials/fonts.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.header {
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+	}
+	&__logo {
+		text-align: center;
+		padding: 1.5rem 0;
+
+		@include tablet {
+			text-align: left;
+			padding: 0;
+		}
+	}
+	&__logoImg {
+		max-height: 1.5625rem;
+		max-width: 7.5rem;
+		// height: 1rem;
+		height: 2.5rem;
+	}
+
+	//form
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		@include tablet {
+			flex-wrap: nowrap;
+			align-items: center;
+			width: 70%;
+			justify-content: end;
+		}
+	}
+	&__search-container {
+		width: 85%;
+		padding-bottom: 1rem;
+		@include tablet {
+			width: auto;
+			padding: 0;
+		}
+	}
+	&__search {
+		width: 100%;
+
+		&::placeholder {
+			color: black;
+		}
+	}
+	&__avatar-container {
+		text-align: center;
+		width: 15%;
+		@include tablet {
+			width: auto;
+		}
+	}
+}
