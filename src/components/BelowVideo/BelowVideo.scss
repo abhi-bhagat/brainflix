@@ -11,6 +11,9 @@
     &__disc{
         @include desktop{
             width: 70%;
+            border-right: 1px solid $mercury;
+
+
         }
     }
 

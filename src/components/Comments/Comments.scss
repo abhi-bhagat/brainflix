@@ -3,6 +3,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .comments {
+   
+
 	&__input {
 		border: 1px solid $mercury;
 
@@ -23,6 +25,11 @@
 		justify-content: space-between;
 		border-bottom: 1px solid $mercury;
 		padding-bottom: 1rem;
+        @include desktop{
+        
+            padding-right: 1rem;
+    
+        }
 	}
 	&__form {
 		width: 85%;
@@ -53,6 +60,11 @@
 		display: flex;
 		padding: 1rem 0;
 		border-bottom: 1px solid $mercury;
+        @include desktop{
+        
+            padding-right: 1rem;
+    
+        }
 	}
 	&__info {
 		width: 90%;
@@ -73,9 +85,9 @@
             display: flex;
         }
     }
-    &__upload-button{
+    &__comment-button{
         @include tablet{
-            margin-right: 0;
+            // margin-right: 0;
         }
     }
 }

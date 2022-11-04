@@ -1,7 +1,7 @@
 import "./UserComments.scss";
 import HumanTime from "../Utility/HumanTime";
 const UserComments = (props) => {
-	console.log("console from  ", props.comments);
+	// console.log("console from  ", props.comments);
 	const allComments = props.comments;
 
 	return (

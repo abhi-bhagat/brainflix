@@ -3,6 +3,7 @@
 
 .video-details {
 	// padding-top: 1rem;
+	
 
 	&__title {
 		border-bottom: 1px solid $mercury;
@@ -25,6 +26,11 @@
 				margin-right: 0;
                 width: 13rem;
                 justify-content:space-between;
+			}
+			@include desktop{
+        
+				padding-right: 1rem;
+		
 			}
 		}
 

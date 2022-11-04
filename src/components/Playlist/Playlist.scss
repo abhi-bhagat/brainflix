@@ -1,0 +1,35 @@
+@use "../../styles/partials/colors.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.playlist {
+@include tablet{
+    width: 30%;
+
+}
+    @include desktop{
+        width: 30%;
+        padding-left: 1rem;
+    }
+	&__card {
+		display: flex;
+        padding: .5rem 0;
+        cursor: pointer;
+	}
+
+	&__image {
+		width: 30%;
+		overflow: hidden;
+		height: 5rem;
+		border-radius: 0.25rem;
+	}
+	&__content {
+		width: 70%;
+        padding-left: 1rem;
+	}
+	&__label {
+        margin: 1rem 0;
+        color: $silver;
+	}
+	label {
+	}
+}

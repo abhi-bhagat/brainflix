@@ -5,7 +5,7 @@ import commentIcon from "../../assets/icons/add_comment.svg";
 
 import UserComments from "../UserComments/UserComments";
 const Comments = (props) => {
-	console.log("comments props ", props.video.comments);
+	// console.log("comments props ", props.video.comments);
 	const comments = props.video.comments;
 	const commentLength = comments.length;
 	return (

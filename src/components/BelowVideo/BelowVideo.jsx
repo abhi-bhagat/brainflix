@@ -10,7 +10,7 @@ const BelowVideo = (props) => {
 			<Comments video={props.video} />
             </div>
 			
-			<Playlist allVideos={props.videoArray}/>
+			<Playlist allVideos={props.videoArray} handleClick={props.handleClick}/>
 		</div>
 	);
 };
