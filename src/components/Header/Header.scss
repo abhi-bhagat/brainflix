@@ -38,12 +38,27 @@
 		}
 	}
 	&__search-container {
+		display: flex;
 		width: 85%;
-		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+
+		border-radius: 4px;
+		// padding: 0.75rem;
+		border: 1px solid $mercury;
+		background-color: $alabaster;
 		@include tablet {
 			width: auto;
 			padding: 0;
+			margin-bottom: 0rem;
 		}
+	}
+
+	&__search-icon {
+		min-height: 2.25rem;
+		height: 2.25rem;
+		width: 10%;
+		// border-radius: 4px;
+		padding: 0.5rem;
 	}
 	&__search {
 		width: 100%;

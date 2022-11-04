@@ -59,13 +59,47 @@ button {
 	}
 }
 
+textarea{
+	font-family: $default_font;
+	resize: none;
+	width: 100%;
+	&::placeholder{
+		color: $black;
+	}
+
+	min-height: 2.25rem;
+	border-radius: 4px;
+	padding: 0.75rem;
+	border: none;
+	background-color: $alabaster;
+	// transition-duration: 0.25s;
+	&:active {
+		border: 2px solid $blue;
+	}
+	@include tablet {
+		min-height: 2.5rem;
+		min-width: 15rem;
+		padding: 1rem;
+		height: 2.5rem;
+	}
+}
+
+label{
+	font-family: $default_font;
+
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	font-weight: bold;
+	color: $silver;
+}
+
 .inputfield {
 	min-height: 2.25rem;
 	border-radius: 4px;
 	padding: 0.75rem;
-	border: 1px solid $mercury;
+	border: none;
 	background-color: $alabaster;
-	transition-duration: 0.25s;
+	// transition-duration: 0.25s;
 	&:active {
 		border: 2px solid $blue;
 	}

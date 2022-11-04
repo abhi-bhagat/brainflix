@@ -3,6 +3,7 @@ import logo from "../../assets/logo/BrainFlix-logo.svg";
 import Button from "../Button/Button";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
+import searchIcon from "../../assets/icons/search.svg";
 
 const Header = () => {
 	const placeHolder = `Search`;
@@ -16,6 +17,11 @@ const Header = () => {
 			<div className="header__form">
 				<div className="header__search-container">
 					{" "}
+					<img
+						className="header__search-icon"
+						src={searchIcon}
+						alt="search icon"
+					/>
 					<input
 						type="text"
 						name="search"
@@ -31,7 +37,7 @@ const Header = () => {
 						<img
 							className="header__buttonIcon"
 							src={uploadIcon}
-							alt="abc"
+							alt="upload icon"
 						></img>
 					}
 					name="UPLOAD"

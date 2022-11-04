@@ -1,0 +1,17 @@
+@use "../../styles/partials/colors.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+
+.below-video{
+    @include desktop{
+
+        display: flex;
+    }
+
+    &__disc{
+        @include desktop{
+            width: 70%;
+        }
+    }
+
+}

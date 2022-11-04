@@ -1,0 +1,71 @@
+@use "../../styles/partials/colors.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.video-details {
+	// padding-top: 1rem;
+
+	&__title {
+		border-bottom: 1px solid $mercury;
+		padding: 1rem 0;
+		@include tablet {
+			border-bottom: 0;
+		}
+	}
+	&__subTitle {
+		padding: 1rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid $mercury;
+
+		&--right {
+			margin-right: 20%;
+			@include tablet {
+				display: flex;
+				margin-right: 0;
+                width: 13rem;
+                justify-content:space-between;
+			}
+		}
+
+		&--left {
+			@include tablet {
+				display: flex;
+                width: 11rem;
+                justify-content:space-between;
+			}
+		}
+	}
+	&__channel {
+		font-weight: bold;
+		margin-bottom: 1rem;
+        @include tablet{
+            margin-bottom: 0;
+        }
+	}
+	&__date {
+		color: $silver;
+	}
+
+	&__likes,
+	&__views {
+		display: flex;
+		justify-content: flex-start;
+		// align-items: baseline;
+		color: $silver;
+		img {
+			padding-right: 0.5rem;
+            width: 30%;
+			// width: 8%;
+		}
+	}
+	&__views {
+		margin-bottom: 1rem;
+        @include tablet{
+            margin-bottom: 0;
+        }
+	}
+	&__description {
+		padding: 1rem 0;
+	}
+}

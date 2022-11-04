@@ -1,0 +1,81 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+	&__input {
+		border: 1px solid $mercury;
+
+		border-radius: 4px;
+		margin-bottom: 1rem;
+        padding: 1rem;
+
+        @include tablet{
+            margin-bottom: 0;
+        }
+	}
+	&__count {
+		padding: 1rem 0;
+	}
+
+	&__new-comment {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid $mercury;
+		padding-bottom: 1rem;
+	}
+	&__form {
+		width: 85%;
+        @include tablet{
+            width: 90%;
+        }
+	}
+	&__avatar {
+		width: 15%;
+		display: flex;
+		justify-content: center;
+		padding-top: 1rem;
+        @include tablet{
+            width: 10%;
+        }
+	}
+	&__avatarImg {
+		background-color: $mercury;
+		border-radius: 50%;
+		height: 2.25rem;
+		width: 2.25rem;
+	}
+	&__input-label {
+		padding-bottom: 0.25rem;
+	}
+
+	&__card {
+		display: flex;
+		padding: 1rem 0;
+		border-bottom: 1px solid $mercury;
+	}
+	&__info {
+		width: 90%;
+	}
+	&__heading {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__date {
+		color: $silver;
+	}
+    &__user-avatar{
+        padding-top: 0;
+    }
+
+    &__input-container{
+        @include tablet{
+            display: flex;
+        }
+    }
+    &__upload-button{
+        @include tablet{
+            margin-right: 0;
+        }
+    }
+}
