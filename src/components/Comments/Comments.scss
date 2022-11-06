@@ -3,18 +3,19 @@
 @use "../../styles/partials/mixins" as *;
 
 .comments {
-   
-
 	&__input {
 		border: 1px solid $mercury;
 
 		border-radius: 4px;
 		margin-bottom: 1rem;
-        padding: 1rem;
+		padding: 1rem;
 
-        @include tablet{
-            margin-bottom: 0;
-        }
+		@include tablet {
+			margin-bottom: 0;
+			padding: 0.5rem 0 0 0.5rem;
+		}
+		@include desktop {
+		}
 	}
 	&__count {
 		padding: 1rem 0;
@@ -25,26 +26,24 @@
 		justify-content: space-between;
 		border-bottom: 1px solid $mercury;
 		padding-bottom: 1rem;
-        @include desktop{
-        
-            padding-right: 1rem;
-    
-        }
+		@include desktop {
+			padding-right: 1rem;
+		}
 	}
 	&__form {
 		width: 85%;
-        @include tablet{
-            width: 90%;
-        }
+		@include tablet {
+			width: 90%;
+		}
 	}
 	&__avatar {
 		width: 15%;
 		display: flex;
 		justify-content: center;
 		padding-top: 1rem;
-        @include tablet{
-            width: 10%;
-        }
+		@include tablet {
+			width: 10%;
+		}
 	}
 	&__avatarImg {
 		background-color: $mercury;
@@ -60,11 +59,9 @@
 		display: flex;
 		padding: 1rem 0;
 		border-bottom: 1px solid $mercury;
-        @include desktop{
-        
-            padding-right: 1rem;
-    
-        }
+		@include desktop {
+			padding-right: 1rem;
+		}
 	}
 	&__info {
 		width: 90%;
@@ -76,18 +73,18 @@
 	&__date {
 		color: $silver;
 	}
-    &__user-avatar{
-        padding-top: 0;
-    }
+	&__user-avatar {
+		padding-top: 0;
+	}
 
-    &__input-container{
-        @include tablet{
-            display: flex;
-        }
-    }
-    &__comment-button{
-        @include tablet{
-            // margin-right: 0;
-        }
-    }
+	&__input-container {
+		@include tablet {
+			display: flex;
+		}
+	}
+	&__comment-button {
+		@include tablet {
+			// margin-right: 0;
+		}
+	}
 }

@@ -73,5 +73,8 @@
 	}
 	&__description {
 		padding: 1rem 0;
+		@include desktop{
+			padding: 1rem 1rem 1rem 0;
+		}
 	}
 }

@@ -2,34 +2,59 @@
 @use "../../styles/partials/mixins.scss" as *;
 
 .playlist {
-@include tablet{
-    width: 30%;
-
-}
-    @include desktop{
-        width: 30%;
-        padding-left: 1rem;
-    }
+	@include tablet {
+		width: 45%;
+	}
+	@include desktop {
+		width: 30%;
+		padding-left: 1rem;
+	}
 	&__card {
 		display: flex;
-        padding: .5rem 0;
-        cursor: pointer;
+		padding: 0.5rem 0;
+		cursor: pointer;
 	}
 
 	&__image {
-		width: 30%;
+		width: 35%;
 		overflow: hidden;
 		height: 5rem;
 		border-radius: 0.25rem;
+		@include tablet {
+			width: 40%;
+			height: 6rem;
+		}
+		@include desktop {
+			height: 5rem;
+		}
 	}
 	&__content {
-		width: 70%;
-        padding-left: 1rem;
+		width: 65%;
+		padding-left: 1rem;
+		height: 5rem;
+		@include tablet {
+			width: 60%;
+			height: 6rem;
+		}
+		@include desktop {
+			height: 5rem;
+		}
 	}
 	&__label {
-        margin: 1rem 0;
-        color: $silver;
+		margin: 1rem 0;
+		color: $silver;
 	}
 	label {
+	}
+
+	&__thumbnail-image {
+		height: 6rem;
+		// border: 1px solid red;
+		border-radius: 4px;
+		object-fit: cover;
+		object-position: center;
+	}
+	@include desktop {
+		height: 5rem;
 	}
 }
