@@ -6,6 +6,7 @@ import likesIcon from "../../assets/icons/likes.svg";
 const VideoDetails = (props) => {
 	// console.log("my videos details", props.allDetails);
 	const myData = props.allDetails;
+	// console.log('in video details', myData);
 	const day = HumanTime(myData.timestamp);
 
 	return (

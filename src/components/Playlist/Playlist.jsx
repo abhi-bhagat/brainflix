@@ -1,4 +1,5 @@
 import "./Playlist.scss";
+import { Link } from "react-router-dom";
 
 const Playlist = (props) => {
 	// console.log("playlist", props.allVideos);
@@ -15,24 +16,27 @@ const Playlist = (props) => {
 			{allVideos.map((video) => {
 				return (
 					//card
-					<div
-						key={video.id}
-						className="playlist__card"
-						onClick={() => props.handleClick(video.id)}
-					>
-						{/* {console.log(video.id)} */}
-						<div className="playlist__image">
-							<img
-								className="playlist__thumbnail-image"
-								src={video.image}
-								alt="video thumbnail"
-							/>
+					<Link to={`/video/${video.id}`} key={video.id}>
+						<div
+							key={video.id}
+							className="playlist__card"
+							// onClick={() => props.handleClick(video.id)}
+						>
+							{/* {console.log(video.id)} */}
+
+							<div className="playlist__image">
+								<img
+									className="playlist__thumbnail-image"
+									src={video.image}
+									alt="video thumbnail"
+								/>
+							</div>
+							<div className="playlist__content">
+								<h2 className="playlist__title">{video.title}</h2>
+								<p className="playlist__channel">{video.channel}</p>
+							</div>
 						</div>
-						<div className="playlist__content">
-							<h2 className="playlist__title">{video.title}</h2>
-							<p className="playlist__channel">{video.channel}</p>
-						</div>
-					</div>
+					</Link>
 				);
 			})}
 		</div>
@@ -40,5 +44,3 @@ const Playlist = (props) => {
 };
 
 export default Playlist;
-
-

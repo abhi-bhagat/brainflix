@@ -2,9 +2,6 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/mixins" as *;
 
-
-
-
 .header {
 	&__btn {
 		order: 2;
@@ -14,30 +11,47 @@
 		justify-content: center;
 		position: relative;
 
+		// =====
+		font-family: $default_font;
+
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+		font-weight: bold;
+		height: 2.5rem;
+		border-radius: 0.25rem;
+		height: 2.5rem;
+		color: white;
+		background-color: $blue;
+		border: none;
+
+		&:hover {
+			background-color: $blue_dark;
+			cursor: pointer;
+		}
+
+		// ====
+
 		@include tablet {
 			order: 0;
-            width: auto;
+			width: auto;
 			margin: 0 1rem;
-            min-width: 9.375rem;
-            padding: 0 2rem;
-
+			min-width: 9.375rem;
+			padding: 0 2rem;
 		}
-        @include desktop{
-            margin: 0 1.5rem;
-        }
+		@include desktop {
+			margin: 0 1.5rem;
+		}
 	}
 	&__buttonIcon {
 		height: 16px;
 		width: 10%;
 		position: absolute;
 		left: 0;
-        @include tablet {
-
-            width: 25%;
+		@include tablet {
+			width: 25%;
 		}
 	}
 }
 
 .comments {
-	
 }

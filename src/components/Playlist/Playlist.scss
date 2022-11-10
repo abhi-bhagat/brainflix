@@ -1,6 +1,10 @@
 @use "../../styles/partials/colors.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
+a{
+	text-decoration: none;
+	color: inherit;
+}
 .playlist {
 	@include tablet {
 		width: 45%;

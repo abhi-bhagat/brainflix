@@ -3,6 +3,9 @@
 @use "../../styles/partials/fonts.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 
+.head {
+	border-bottom: 1px solid $mercury;
+}
 .header {
 	@include tablet {
 		display: flex;
@@ -73,5 +76,9 @@
 		@include tablet {
 			width: auto;
 		}
+	}
+
+	&__buttonIcon {
+		text-decoration: none;
 	}
 }
