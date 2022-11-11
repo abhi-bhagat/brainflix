@@ -87,4 +87,15 @@
 			// margin-right: 0;
 		}
 	}
+
+	&__delete-icon {
+		padding: 0.5rem;
+		display: inline-block;
+		cursor: pointer;
+
+	}
+	&__delete{
+		display: flex;
+		justify-content: flex-end;
+	}
 }

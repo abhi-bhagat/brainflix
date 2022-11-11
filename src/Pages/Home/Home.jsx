@@ -25,6 +25,31 @@ const Home = () => {
 			.catch((error) => console.log("Error retriving Video Details", error));
 	};
 
+	//comment handler
+	const commentHandler = (id, data) => {
+		const comment = {
+			comment: data,
+			name: "Lorem",
+		};
+		axios
+			.post(
+				`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=${API_KEY}`,
+				comment
+			)
+			.then((res) => {
+				getVideoDetails(id);
+			})
+			.catch((error) => console.log("Error updating comment", error));
+	};
+	//delete Comment handler
+	const deleteHandler = (comId, vidId) => {
+		axios
+			.delete(
+				`https://project-2-api.herokuapp.com/videos/${vidId}/comments/${comId}?api_key=${API_KEY}`
+			)
+			.then((res) => getVideoDetails(vidId))
+			.catch((error) => console.log("Unable to delete comment", error));
+	};
 	// * FOR GETTING LIST OF ALL VIDEOS !!!!
 	// making axios request to get playlist
 	// also in this request we are watching params.id and see if there is any id
@@ -58,6 +83,8 @@ const Home = () => {
 					videoArray={videoPlaylist.filter(
 						(myVideo) => myVideo.id !== video.id
 					)}
+					commentHandler={commentHandler}
+					deleteHandler={deleteHandler}
 				/>
 			)}
 		</>

@@ -1,8 +1,8 @@
 import "./UserComments.scss";
 import HumanTime from "../Utility/HumanTime";
 const UserComments = (props) => {
-	// console.log("console from  ", props.comments);
 	const allComments = props.comments;
+	allComments.reverse();
 
 	return (
 		<div className="comments__postedComments">
@@ -22,6 +22,16 @@ const UserComments = (props) => {
 								</p>
 							</div>
 							<div className="comments__text">{comment.comment}</div>
+							<div className="comments__delete">
+								<div
+									onClick={() => {
+										props.deleteHandler(comment.id, props.videoId);
+									}}
+									className="comments__delete-icon"
+								>
+									❌
+								</div>
+							</div>
 						</div>
 					</div>
 				);

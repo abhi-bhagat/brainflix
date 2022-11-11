@@ -5,9 +5,9 @@ import commentIcon from "../../assets/icons/add_comment.svg";
 
 import UserComments from "../UserComments/UserComments";
 const Comments = (props) => {
-	// console.log("comments props ", props.video.comments);
 	const comments = props.video.comments;
 	const commentLength = comments.length;
+	const commentHandler = props.commentHandler;
 	return (
 		<div className="comments">
 			<h2 className="comments__count">{commentLength} Comments</h2>
@@ -16,7 +16,16 @@ const Comments = (props) => {
 				<div className="comments__avatar ">
 					<img className="avatar" src={avatar} alt="avatar img" />
 				</div>
-				<form className="comments__form" action="#">
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+
+						commentHandler(props.video.id, e.target.comment.value);
+						e.target.comment.value = "";
+					}}
+					className="comments__form"
+					action="#"
+				>
 					<label htmlFor="comment" className="comments__input-label">
 						JOIN THE CONVERSATION
 					</label>
@@ -44,7 +53,11 @@ const Comments = (props) => {
 				</form>
 			</div>
 
-			<UserComments comments={comments} />
+			<UserComments
+				comments={comments}
+				deleteHandler={props.deleteHandler}
+				videoId={props.video.id}
+			/>
 		</div>
 	);
 };

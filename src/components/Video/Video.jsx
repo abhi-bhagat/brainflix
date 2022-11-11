@@ -11,6 +11,7 @@ const Video = (props) => {
 					className="videoFrame"
 					poster={posterImage}
 					width="100%"
+					height="700px"
 					controls
 				>
 					<source src={videoLink} />

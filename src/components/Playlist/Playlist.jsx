@@ -2,13 +2,7 @@ import "./Playlist.scss";
 import { Link } from "react-router-dom";
 
 const Playlist = (props) => {
-	// console.log("playlist", props.allVideos);
 	const allVideos = props.allVideos;
-
-	// * below is the function that was passed from the parent container that will take the id so that we can work on it
-	// props.handleClick();
-
-	// *in order to make above function work we have to first get the id of clicked card. in order to do that we will add click listener to cards and then pass the id of the div as we are already getting that id from the video that we have passed
 
 	return (
 		<div className="playlist">

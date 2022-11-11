@@ -11,7 +11,7 @@ const Button = (props) => {
 		);
 	} else {
 		return (
-			<button className="header__btn comments__comment-button">
+			<button type="submit" className="header__btn comments__comment-button">
 				{props.icon}
 				{props.name}
 			</button>
