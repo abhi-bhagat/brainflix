@@ -13,6 +13,8 @@ import { useState } from "react";
 const Upload = () => {
 	const API_KEY = "11f5f6ec-6f00-4161-a044-722d72159b2b";
 	const PLAYLIST_LINK = `http://localhost:8080/videos`;
+
+	// assigning and checking state variables
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 
@@ -35,11 +37,11 @@ const Upload = () => {
 			position: toast.POSITION.TOP_CENTER,
 		});
 	};
-	const goHome = (e) => {
-		e.preventDefault();
-		console.log("hmmm");
-		navigate("/");
-	};
+	// const goHome = (e) => {
+	// 	e.preventDefault();
+	// 	console.log("hmmm");
+	// 	navigate("/");
+	// };
 	const errMessage = () => {
 		toast.error("Description should be more than 100 letters!", {
 			position: toast.POSITION.TOP_CENTER,
@@ -58,7 +60,7 @@ const Upload = () => {
 			axios
 				.post(PLAYLIST_LINK, videoDetails)
 				.then((res) => {
-					// notify();
+					notify();
 					setTimeout(() => {
 						navigate("/");
 					}, 2500);
@@ -113,10 +115,6 @@ const Upload = () => {
 								<Button
 									name="CANCEL"
 									className=" upload__cancel comments__comment-button"
-									gohome={(e) => {
-										goHome(e);
-										e.preventDefault();
-									}}
 								/>
 								<Button
 									type="submit"

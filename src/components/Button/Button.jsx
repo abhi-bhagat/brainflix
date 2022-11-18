@@ -1,7 +1,13 @@
 import "./Button.scss";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Button = ({ name, icon, goHome }) => {
+const Button = ({ name, icon }) => {
+	const navigate = useNavigate();
+	const goHome = (e) => {
+		navigate("/");
+	};
+
 	if (name === "UPLOAD") {
 		return (
 			<Link to="/upload" className="header__btn comments__comment-button">
@@ -12,10 +18,11 @@ const Button = ({ name, icon, goHome }) => {
 	} else if (name === "CANCEL") {
 		return (
 			<button
-				onClick={goHome}
+				onClick={(e) => {
+					goHome(e);
+				}}
 				className="upload__cancel-button header__btn comments__comment-button"
 			>
-				{" "}
 				{name}
 			</button>
 		);
