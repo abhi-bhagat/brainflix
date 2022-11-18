@@ -1,8 +1,8 @@
 import "./Video.scss";
 
-const Video = (props) => {
-	const posterImage = props.whichVideo.image;
-	const videoLink = props.whichVideo.video;
+const Video = ({ whichVideo }) => {
+	const posterImage = whichVideo.image;
+	const videoLink = whichVideo.video;
 
 	return (
 		<div className="video-container">
@@ -14,7 +14,7 @@ const Video = (props) => {
 					height="700px"
 					controls
 				>
-					<source src={videoLink} />
+					<source src="" />
 				</video>
 			</div>
 		</div>

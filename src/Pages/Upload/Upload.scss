@@ -69,6 +69,7 @@
 
 	&__cancel {
 		font-family: $default_font;
+		background-color: white;
 		display: block;
 		font-size: 0.75rem;
 		line-height: 1.25rem;
@@ -113,6 +114,15 @@
 		@include desktop {
 			border: none;
 			padding-top: 3rem;
+		}
+	}
+	&__cancel-button {
+		background-color: white;
+		color: $blue;
+		&:hover {
+			cursor: pointer;
+			background-color: white;
+			color: $blue;
 		}
 	}
 }

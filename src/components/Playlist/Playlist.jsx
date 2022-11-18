@@ -10,7 +10,7 @@ const Playlist = (props) => {
 			{allVideos.map((video) => {
 				return (
 					//card
-					<Link to={`/video/${video.id}`} key={video.id}>
+					<Link to={`/videos/${video.id}`} key={video.id}>
 						<div
 							key={video.id}
 							className="playlist__card"

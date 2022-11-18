@@ -2,16 +2,22 @@ import "./BelowVideo.scss";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import Comments from "../Comments/Comments";
 import Playlist from "../Playlist/Playlist";
-const BelowVideo = (props) => {
+const BelowVideo = ({ video, deleteHandler, commentHandler, videoArray }) => {
 	return (
 		<div className="container below-video">
 			<div className="below-video__disc">
-				<VideoDetails allDetails={props.video} />
+				<VideoDetails allDetails={video} />
 
-				{<Comments video={props.video} deleteHandler={props.deleteHandler} commentHandler={props.commentHandler} />}
+				{
+					<Comments
+						video={video}
+						deleteHandler={deleteHandler}
+						commentHandler={commentHandler}
+					/>
+				}
 			</div>
 
-			<Playlist allVideos={props.videoArray} />
+			<Playlist allVideos={videoArray} />
 		</div>
 	);
 };

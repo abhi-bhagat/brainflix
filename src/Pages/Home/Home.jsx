@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const Home = () => {
 	const API_KEY = "11f5f6ec-6f00-4161-a044-722d72159b2b";
-	const PLAYLIST_LINK = `https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`;
+	const PLAYLIST_LINK = `http://localhost:8080/videos`;
 
 	const params = useParams();
 
@@ -16,9 +16,7 @@ const Home = () => {
 	// getting video details --> comments, description and thumbnail
 	const getVideoDetails = (id) => {
 		axios
-			.get(
-				`https://project-2-api.herokuapp.com/videos/${id}?api_key=${API_KEY}`
-			)
+			.get(`http://localhost:8080/videos/${id}?api_key=${API_KEY}`)
 			.then((res) => {
 				setVideo(res.data);
 			})
@@ -33,7 +31,7 @@ const Home = () => {
 		};
 		axios
 			.post(
-				`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=${API_KEY}`,
+				`http://localhost:8080/videos/${id}/comments?api_key=${API_KEY}`,
 				comment
 			)
 			.then((res) => {
@@ -45,7 +43,7 @@ const Home = () => {
 	const deleteHandler = (comId, vidId) => {
 		axios
 			.delete(
-				`https://project-2-api.herokuapp.com/videos/${vidId}/comments/${comId}?api_key=${API_KEY}`
+				`http://localhost:8080/videos/${vidId}/comments/${comId}?api_key=${API_KEY}`
 			)
 			.then((res) => getVideoDetails(vidId))
 			.catch((error) => console.log("Unable to delete comment", error));

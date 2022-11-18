@@ -3,8 +3,8 @@ import HumanTime from "../Utility/HumanTime";
 import viewIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
-const VideoDetails = (props) => {
-	const myData = props.allDetails;
+const VideoDetails = ({ allDetails }) => {
+	const myData = allDetails;
 
 	const day = HumanTime(myData.timestamp);
 
