@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const Home = () => {
 	const API_KEY = "11f5f6ec-6f00-4161-a044-722d72159b2b";
-	const PLAYLIST_LINK = `http://localhost:8080/videos`;
+	const PLAYLIST_LINK = process.env.REACT_APP_SERVER_URL;
 
 	const params = useParams();
 
@@ -16,7 +16,7 @@ const Home = () => {
 	// getting video details --> comments, description and thumbnail
 	const getVideoDetails = (id) => {
 		axios
-			.get(`http://localhost:8080/videos/${id}?api_key=${API_KEY}`)
+			.get(`${PLAYLIST_LINK}/${id}?api_key=${API_KEY}`)
 			.then((res) => {
 				setVideo(res.data);
 			})
@@ -27,13 +27,10 @@ const Home = () => {
 	const commentHandler = (id, data) => {
 		const comment = {
 			comment: data,
-			name: "Lorem",
+			name: "drunkCommando",
 		};
 		axios
-			.post(
-				`http://localhost:8080/videos/${id}/comments?api_key=${API_KEY}`,
-				comment
-			)
+			.post(`${PLAYLIST_LINK}/${id}/comments?api_key=${API_KEY}`, comment)
 			.then((res) => {
 				getVideoDetails(id);
 			})
@@ -42,9 +39,7 @@ const Home = () => {
 	//delete Comment handler
 	const deleteHandler = (comId, vidId) => {
 		axios
-			.delete(
-				`http://localhost:8080/videos/${vidId}/comments/${comId}?api_key=${API_KEY}`
-			)
+			.delete(`${PLAYLIST_LINK}/${vidId}/comments/${comId}?api_key=${API_KEY}`)
 			.then((res) => getVideoDetails(vidId))
 			.catch((error) => console.log("Unable to delete comment", error));
 	};
@@ -67,6 +62,7 @@ const Home = () => {
 				setVideoPlaylist(res.data);
 			})
 			.catch((error) => console.log(error));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [params.id]);
 
 	return (
