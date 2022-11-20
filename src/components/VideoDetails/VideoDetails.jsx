@@ -2,8 +2,11 @@ import "./VideoDetails.scss";
 import HumanTime from "../Utility/HumanTime";
 import viewIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
+import { useRef } from "react";
 
-const VideoDetails = ({ allDetails }) => {
+const VideoDetails = ({ allDetails, likesHandler }) => {
+	const ref = useRef();
+
 	const myData = allDetails;
 
 	const day = HumanTime(myData.timestamp);
@@ -26,7 +29,16 @@ const VideoDetails = ({ allDetails }) => {
 
 						{myData.views}
 					</p>
-					<p className="video-details__likes">
+					<p
+						ref={ref}
+						className="video-details__likes"
+						onClick={() => {
+							const classThere = ref.current.classList.contains("likes");
+							ref.current.classList.toggle("likes");
+
+							likesHandler(myData.id, classThere);
+						}}
+					>
 						<img
 							className="video-details__spanImg"
 							src={likesIcon}

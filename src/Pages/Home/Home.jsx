@@ -22,7 +22,25 @@ const Home = () => {
 			})
 			.catch((error) => console.log("Error retriving Video Details", error));
 	};
+	//likes
 
+	const likesHandler = (id, classThere) => {
+		if (classThere === false) {
+			axios
+				.put(`${PLAYLIST_LINK}/${id}/likes`)
+				.then((res) => {
+					getVideoDetails(id);
+				})
+				.catch((error) => console.log(`Error liking video`));
+		} else {
+			axios
+				.put(`${PLAYLIST_LINK}/${id}/likesDec`)
+				.then((res) => {
+					getVideoDetails(id);
+				})
+				.catch((error) => console.log(`Error liking video`));
+		}
+	};
 	//comment handler
 	const commentHandler = (id, data) => {
 		const comment = {
@@ -44,10 +62,6 @@ const Home = () => {
 			.catch((error) => console.log("Unable to delete comment", error));
 	};
 	// * FOR GETTING LIST OF ALL VIDEOS !!!!
-	// making axios request to get playlist
-	// also in this request we are watching params.id and see if there is any id
-	// if there is then we display that video
-	// if there isn't then we display the default video
 
 	const [videoPlaylist, setVideoPlaylist] = useState(null);
 	useEffect(() => {
@@ -79,6 +93,7 @@ const Home = () => {
 					)}
 					commentHandler={commentHandler}
 					deleteHandler={deleteHandler}
+					likesHandler={likesHandler}
 				/>
 			)}
 		</>
