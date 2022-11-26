@@ -24,22 +24,13 @@ const Home = () => {
 	};
 	//likes
 
-	const likesHandler = (id, classThere) => {
-		if (classThere === false) {
-			axios
-				.put(`${PLAYLIST_LINK}/${id}/likes`)
-				.then((res) => {
-					getVideoDetails(id);
-				})
-				.catch((error) => console.log(`Error liking video`));
-		} else {
-			axios
-				.put(`${PLAYLIST_LINK}/${id}/likesDec`)
-				.then((res) => {
-					getVideoDetails(id);
-				})
-				.catch((error) => console.log(`Error liking video`));
-		}
+	const likesHandler = (id) => {
+		axios
+			.put(`${PLAYLIST_LINK}/${id}/likes`)
+			.then((res) => {
+				getVideoDetails(id);
+			})
+			.catch((error) => console.log(`Error liking video`));
 	};
 	//comment handler
 	const commentHandler = (id, data) => {

@@ -33,10 +33,10 @@ const VideoDetails = ({ allDetails, likesHandler }) => {
 						ref={ref}
 						className="video-details__likes"
 						onClick={() => {
-							const classThere = ref.current.classList.contains("likes");
-							ref.current.classList.toggle("likes");
+							// const classThere = ref.current.classList.contains("likes");
+							ref.current.classList.add("likes");
 
-							likesHandler(myData.id, classThere);
+							likesHandler(myData.id);
 						}}
 					>
 						<img
